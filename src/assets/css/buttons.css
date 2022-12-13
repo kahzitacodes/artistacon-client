@@ -1,0 +1,30 @@
+.btn {
+   border: none;
+   cursor: pointer;
+   transition: background-color .15s ease-in-out;
+   text-decoration: none;
+}
+
+.btn-md {
+   border-radius: 14px;
+   padding: 12px 20px;
+   font-size: var(--fontSize-bodyMedium);
+   font-weight: var(--fontWeight-medium);
+}
+
+
+.btn-lg {
+   border-radius: 16px;
+   padding: 16px 40px;
+   font-size: var(--fontSize-bodyLarge);
+   font-weight: var(--fontWeight-medium);
+}
+
+.btn-primary {
+   color: var(--color-mono1);
+   background-color: var(--color-primaryBase);
+}
+
+.btn-primary:hover {
+   background-color: var(--color-primary400);
+}

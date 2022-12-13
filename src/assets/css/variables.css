@@ -1,0 +1,51 @@
+:root {
+
+   --color-primaryBase: #FF6099;
+   --color-primary400: #FF80AD;
+   --color-secondaryBase: #887EF9;
+
+   --color-errorBase: #FF5757;
+   --color-errorLight: #FF7171;
+
+   --color-grey50: #F9FAFB;
+   --color-grey100: #F3F4F6;
+   --color-grey200: #E5E7EB;
+   --color-grey300: #D1D5DB;
+   --color-grey400: #9CA3AF;
+   --color-grey500: #6B7280;
+   --color-grey600: #4B5563;
+   --color-grey700: #374151;
+   --color-grey800: #1F2937;
+   --color-grey900: #111827;
+
+   --color-mono1: white;
+
+   --fontSize-headingH1: 72px;
+   --fontSize-headingH2: 40px;
+   --fontSize-headingH3: 32px;
+   --fontSize-headingH4: 24px;
+   --fontSize-headingH5: 20px;
+   --fontSize-headingH6: 18px;
+
+   --fontSize-bodyXLarge: 18px;
+   --fontSize-bodyLarge: 16px;
+   --fontSize-bodyMedium: 14px;
+   --fontSize-bodySmall: 12px;
+   --fontSize-bodyXSmall: 10px;
+
+   --fontWeight-light: 300;
+   --fontWeight-regular: 400;
+   --fontWeight-medium: 500;
+   --fontWeight-semiBold: 600;
+   --fontWeight-bold: 700;
+
+   --lineHeight-XSmall: 120%;
+   --lineHeight-small: 140%;
+   --lineHeight-medium: 150%;
+   --lineHeight-large: 170%;
+
+   --borderRadius-XSmall: 12px;
+   --borderRadius-small: 14px;
+   --borderRadius-medium: 16px;
+   --borderRadius-large: 20px;
+}

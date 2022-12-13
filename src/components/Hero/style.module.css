@@ -1,0 +1,26 @@
+.hero__container {
+   align-items: center;
+   display: flex;
+   gap: 60px;
+   padding: 60px 0;
+}
+
+.hero__content {
+   align-items: baseline;
+   display: flex;
+   flex-direction: column;
+   gap: 40px;
+}
+
+.hero__text {
+   align-items: baseline;
+   display: flex;
+   flex-direction: column;
+   gap: 24px;
+}
+
+.hero__sub {
+   font-size: var(--fontSize-bodyXLarge);
+   line-height: var(--lineHeight-large);
+   margin: 0;
+}

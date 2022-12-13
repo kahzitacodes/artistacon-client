@@ -1,0 +1,42 @@
+.header {}
+
+.header__container {
+   align-items: center;
+   display: flex;
+   justify-content: space-between;
+   margin: 0 auto;
+   width: 100%;
+   padding-top: 20px;
+   padding-bottom: 20px;
+   padding-left: 20px;
+   padding-right: 20px;
+}
+
+.navbar__logo {
+   display: flex;
+}
+
+.navbar__menu {
+   display: flex;
+   gap: 50px;
+}
+
+.navbar__menu a {
+   text-decoration: none;
+   color: var(--color-grey500);
+}
+
+.navbar__links {
+   display: flex;
+   gap: 20px;
+}
+
+.navbar__links a {
+   text-decoration: none;
+   color: var(--color-grey900);
+}
+
+.navbar__links .linkIcon {
+   display: flex;
+   text-indent: -9999px;
+}
