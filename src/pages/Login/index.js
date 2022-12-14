@@ -28,7 +28,7 @@ export function Login() {
 
       localStorage.setItem("loggedInUser", JSON.stringify(response.data));
 
-      navigate("/perfil");
+      navigate("/minha-conta/perfil");
     } catch (error) {
       console.log(error);
     }
@@ -61,7 +61,7 @@ export function Login() {
         </div>
         <button className="btn btn-lg btn-primary">Entrar</button>
       </form>
-      <p className="text-center form-line">Não possui conta? <Link to="/signup">Cadastre-se</Link></p>
+      <p className="text-center form-line">Não possui conta? <Link to="/cadastro">Cadastre-se</Link></p>
     </main>
   );
 }

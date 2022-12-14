@@ -1,0 +1,59 @@
+.card__wrapper {
+   border: 1px solid var(--color-grey100);
+   border-radius: var(--borderRadius-large);
+   display: flex;
+   gap: 24px;
+   padding: 16px;
+   box-shadow: var(--shadow-XSmall);
+}
+
+.card__image {
+   border-radius: var(--borderRadius-XSmall);
+   height: 90px;
+   overflow: hidden;
+   width: 90px;
+}
+
+.card__image img {
+   width: 100%;
+}
+
+.card__content {
+   display: flex;
+   flex-direction: column;
+   flex: 1 1 auto;
+   gap: 20px;
+}
+
+.card__title {
+   color: var(--color-grey700);
+   font-weight: var(--fontWeight-semiBold);
+}
+
+.card__infos {
+   display: flex;
+   justify-content: space-between;
+}
+
+.card__actions {
+   display: flex;
+   gap: 20px;
+}
+
+.card__time,
+.card__price {
+   align-items: center;
+   font-size: var(--fontSize-headingH5);
+   font-weight: var(--fontWeight-semiBold);
+   position: relative;
+   display: flex;
+}
+
+.card__time::before {
+   content: "";
+   position: absolute;
+   left: -28px;
+   width: 20px;
+   height: 20px;
+   background: url("../../assets/images/i-clock300.svg") no-repeat;
+}

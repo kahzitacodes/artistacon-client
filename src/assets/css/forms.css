@@ -28,7 +28,13 @@
    margin-bottom: 20px;
 }
 
-.form-wrap label {
+.form-wrap-upload {
+   display: flex;
+   align-items: center;
+   gap: 24px;
+}
+
+.form__label {
    color: var(--color-grey400);
    font-size: var(--fontSize-bodyMedium);
    font-weight: var(--fontWeight-medium);
@@ -39,11 +45,16 @@
    background-color: var(--color-grey50);
    border: 1px solid var(--color-grey50);
    border-radius: 20px;
-   color: var(---color-grey900);
+   color: var(--color-grey600);
    font-size: 16px;
    line-height: 32px;
    padding: 12px 20px;
    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+textarea.form-control {
+   font-size: 16px;
+   line-height: 24px;
 }
 
 .form-control:hover {
@@ -59,4 +70,56 @@
 
 .form-line {
    font-size: var(--fontSize-medium);
+}
+
+.form__avatar {
+   background: url("https://res.cloudinary.com/dpxfwxwfu/image/upload/v1670781257/default-imgs/user__img_default_wz8xpx.png") no-repeat 100% 100% / cover;
+   border-radius: var(--borderRadius-XLarge);
+   overflow: hidden;
+   height: 160px;
+   width: 160px;
+}
+
+.form__image {
+   background: url("https://res.cloudinary.com/dpxfwxwfu/image/upload/v1670971311/default-imgs/product__img_default_yrdhct.png") no-repeat 100% 100% / cover;
+   border-radius: var(--borderRadius-XSmall);
+   overflow: hidden;
+   height: 160px;
+   width: 160px;
+}
+
+.form__avatar img,
+.form__image img {
+   width: 100%;
+}
+
+.form__helper {
+   font-size: var(--fontSize-bodySmall);
+   color: var(--color-grey400);
+}
+
+.form__title {
+   margin-bottom: 24px;
+}
+
+.form__actions {
+   justify-content: flex-end;
+   display: flex;
+}
+
+input[type="file"] {
+   display: none;
+}
+
+.custom-file-upload {
+   display: inline-block;
+
+   border: 2px solid var(--color-grey300);
+   border-radius: var(--borderRadius-medium);
+   font-size: var(--fontSize-bodyMedium);
+   font-weight: var(--fontWeight-medium);
+   color: var(--color-grey900);
+   cursor: pointer;
+   padding: 12px 20px;
+   transition: background-color .15s ease-in-out;
 }

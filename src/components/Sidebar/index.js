@@ -10,67 +10,36 @@ import iCalendar from "../../assets/images/i-calendar300.svg";
 import iBook from "../../assets/images/i-book-open300.svg";
 import iKey from "../../assets/images/i-key300.svg";
 
-import { useEffect, useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
-import { api } from "../../api/api";
-import { AuthContext } from "../../contexts/authContext";
-
 
 export function Sidebar(props) {
 
-   const { loggedInUser, setLoggedInUser } = useContext(AuthContext);
-
-   const [user, setUser] = useState({ name: "", email: "" });
-   const navigate = useNavigate();
-
-   useEffect(() => {
-      async function fetchUser() {
-         const response = await api.get("/user/account");
-         setUser(response.data);
-      }
-
-      fetchUser();
-   }, []);
-
-
-   function handleLogOut() {
-      localStorage.removeItem("loggedInUser");
-      setLoggedInUser(null);
-   }
-
-   useEffect(() => {
-      if (!loggedInUser) {
-         navigate("/login");
-      }
-   }, [loggedInUser, navigate]);
-
-   //const { logout, name, email, role } = props;
+   const { logout, name, email, role } = props;
 
    return (
       <div className={style.sidebar}>
-         <div className={style.sidebar__wrap}>
-            <h4>{user.name}</h4>
-            <span>{user.email}</span>
+         <div className={style.sidebar__user}>
+            <h5>{name}</h5>
+            <span>{email}</span>
          </div>
          <hr />
          <nav className={style.sidebar__nav}>
             <ul>
-               {user.role === "ARTIST" &&
+               {role === "ARTIST" &&
                   <>
                      <li>
-                        <NavLink className={style.sidebar__link} to="/perfil">
+                        <NavLink className={style.sidebar__link} to="/minha-conta/perfil">
                            <img src={iUser} alt="Perfil público" />
                            Perfil público
                         </NavLink>
                      </li>
                      <li>
-                        <NavLink className={style.sidebar__link} to="/perfil">
+                        <NavLink className={style.sidebar__link} to="/minha-conta/produtos">
                            <img src={iPack} alt="Produtos" />
                            Produtos
                         </NavLink>
                      </li>
                      <li>
-                        <NavLink className={style.sidebar__link} to="/perfil">
+                        <NavLink className={style.sidebar__link} to="/minha-conta/galeria">
                            <img src={iImage} alt="Galeria" />
                            Galeria
                         </NavLink>
@@ -78,16 +47,16 @@ export function Sidebar(props) {
                   </>
                }
 
-               {user.role === "ADMIN" &&
+               {role === "ADMIN" &&
                   <>
                      <li>
-                        <NavLink className={style.sidebar__link} to="/perfil">
+                        <NavLink className={style.sidebar__link} to="/minha-conta/programacao">
                            <img src={iCalendar} alt="Programação" />
                            Programação
                         </NavLink>
                      </li>
                      <li>
-                        <NavLink className={style.sidebar__link} to="/perfil">
+                        <NavLink className={style.sidebar__link} to="/minha-conta/faq">
                            <img src={iBook} alt="FAQ" />
                            FAQ
                         </NavLink>
@@ -95,9 +64,9 @@ export function Sidebar(props) {
                   </>
                }
                <>
-                  {user.role !== "ADMIN" &&
+                  {role !== "ADMIN" &&
                      <li>
-                        <NavLink className={style.sidebar__link} to="/perfil">
+                        <NavLink className={style.sidebar__link} to="/minha-conta/favoritos">
                            <img src={iHeart} alt="Favoritos" />
                            Favoritos
                         </NavLink>
@@ -123,7 +92,7 @@ export function Sidebar(props) {
          <nav className={style.sidebar__nav}>
             <ul>
                <li>
-                  <button className={style.sidebar__link} onClick={handleLogOut}>
+                  <button className={style.sidebar__link} onClick={logout}>
                      <img src={iLogout} alt="Sair" />
                      Sair
                   </button>

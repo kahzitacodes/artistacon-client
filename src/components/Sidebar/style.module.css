@@ -1,11 +1,21 @@
 .sidebar {
+   background: var(--color-mono1);
    border-radius: var(--borderRadius-large);
    border: 1px solid var(--color-grey100);
+   box-shadow: var(--shadow-XSmall);
 }
 
-.sidebar>div {
-   text-align: center;
+.sidebar__user {
+   display: flex;
+   flex-direction: column;
+   gap: 8px;
    padding: 24px;
+   text-align: center;
+}
+
+.sidebar__user span {
+   color: var(--color-grey600);
+   font-size: var(--fontSize-bodyMmall);
 }
 
 .sidebar>nav {

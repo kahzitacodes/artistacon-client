@@ -1,0 +1,43 @@
+.card__wrapper {
+   cursor: pointer;
+   display: flex;
+   flex-direction: column;
+   text-decoration: none;
+   gap: 20px;
+   transition: all .15s ease-in-out;
+   position: relative;
+}
+
+.card__wrapper:hover .card__image {
+   box-shadow: var(--shadow-large);
+}
+
+.card__image {
+   aspect-ratio: 1;
+   border-radius: var(--borderRadius-medium);
+   overflow: hidden;
+   transition: all .15s ease-in-out;
+}
+
+.card__image img {
+   width: 100%;
+}
+
+.card__info {
+   display: flex;
+   flex-direction: column;
+   gap: 12px;
+}
+
+.card__price {
+   color: var(--color-secondaryBase);
+   font-weight: var(--fontWeight-semiBold);
+}
+
+.card__fav {
+   position: absolute;
+   top: 8px;
+   right: 8px;
+   border: 8px solid red;
+   box-shadow: var(--shadow-XSmall);
+}

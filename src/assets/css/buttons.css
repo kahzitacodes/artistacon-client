@@ -1,15 +1,30 @@
 .btn {
+   background: transparent;
    border: none;
    cursor: pointer;
+   display: flex;
    transition: background-color .15s ease-in-out;
    text-decoration: none;
+   align-items: center;
+   justify-content: center;
+}
+
+.btn-icon {
+   gap: 8px;
+}
+
+.btn-sm {
+   border-radius: var(--borderRadius-XSmall);
+   padding: 12px 16px;
+   font-size: var(--fontSize-bodyMedium);
+   font-weight: var(--fontWeight-medium);
 }
 
 .btn-md {
    border-radius: 14px;
    padding: 12px 20px;
    font-size: var(--fontSize-bodyMedium);
-   font-weight: var(--fontWeight-medium);
+   font-weight: var(--fontWeight-semiBold);
 }
 
 
@@ -17,7 +32,7 @@
    border-radius: 16px;
    padding: 16px 40px;
    font-size: var(--fontSize-bodyLarge);
-   font-weight: var(--fontWeight-medium);
+   font-weight: var(--fontWeight-semiBold);
 }
 
 .btn-primary {
@@ -27,4 +42,128 @@
 
 .btn-primary:hover {
    background-color: var(--color-primary400);
+}
+
+.btn-danger {
+   color: var(--color-mono1);
+   background-color: var(--color-errorBase);
+}
+
+.btn-danger:hover {
+   background-color: var(--color-errorLight);
+}
+
+.btn-outline-danger {
+   border: 2px solid var(--color-errorBase);
+   color: var(--color-errorBase);
+   background-color: transparent;
+}
+
+.btn-outline-danger:hover {
+   background-color: var(--color-errorLighter);
+}
+
+.btn-outline-secondary {
+   border: 2px solid var(--color-grey200);
+   color: var(--color-grey900);
+   background-color: transparent;
+}
+
+.btn-outline-secondary:hover {
+   background-color: var(--color-grey50);
+}
+
+.btn-link {
+   background: none;
+   color: var(--color-grey500);
+}
+
+.btn-link:hover {
+   background-color: var(--color-grey100);
+}
+
+[class^='link__'] {
+   align-items: center;
+   background: none;
+   border: none;
+   cursor: pointer;
+   display: flex;
+   font-size: var(--fontSize-Large);
+   gap: 8px;
+   padding: 0;
+   text-decoration: none;
+}
+
+.link__default {
+   color: var(--color-grey400);
+}
+
+.link__danger {
+   color: var(--color-errorBase);
+}
+
+.link__default:hover {
+   color: var(--color-grey500);
+}
+
+.link__danger:hover {
+   color: var(--color-errorLight);
+}
+
+[class^='link__']:hover {
+   text-decoration: none;
+}
+
+.link-delete::before {
+   content: "";
+   left: -24px;
+   width: 20px;
+   height: 20px;
+   background: url("../../assets/images/i-trash-danger.svg") no-repeat;
+}
+
+.link-back::before {
+   content: "";
+   left: -24px;
+   width: 20px;
+   height: 20px;
+   background: url("../../assets/images/i-arrow-back300.svg") no-repeat;
+}
+
+.btn-fav {
+   background-color: var(--color-mono1);
+   border-radius: var(--borderRadius-XLarge);
+   height: 44px;
+   text-indent: 9999px;
+   width: 44px;
+   justify-content: center;
+}
+
+.btn-fav::before {
+   content: "";
+   background: url("../../assets/images/i-heart900.svg") no-repeat;
+   height: 20px;
+   position: absolute;
+   width: 20px;
+}
+
+.btn-fav.active::before {
+   background: url("../../assets/images/i-heart-fill.svg") no-repeat;
+
+}
+
+.btn-back-round {
+   background-color: var(--color-mono1);
+   height: 44px;
+   text-indent: 9999px;
+   width: 44px;
+   justify-content: center;
+}
+
+.btn-back-round::before {
+   content: "";
+   background: url("../../assets/images/i-arrow-back900.svg") no-repeat;
+   height: 20px;
+   position: absolute;
+   width: 20px;
 }

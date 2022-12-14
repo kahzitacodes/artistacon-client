@@ -2,6 +2,7 @@
 @import "variables.css";
 @import "grid.css";
 @import "buttons.css";
+@import "account.css";
 
 
 * {
@@ -43,8 +44,17 @@ h3 {
    font-size: var(--fontSize-headingH3);
 }
 
+.heading__h4,
 h4 {
    font-size: var(--fontSize-headingH4);
+}
+
+h2 {
+   font-size: var(--fontSize-headingH2);
+}
+
+h5 {
+   font-size: var(--fontSize-headingH5);
 }
 
 a {
@@ -82,4 +92,86 @@ p {
 hr {
    border-top: var(--color-grey100);
    margin: 0;
+}
+
+/* .toast__content {
+   display: flex;
+   gap: 10px;
+   align-items: center;
+ } */
+
+.toast__content--vertical {
+   display: flex;
+   flex-direction: column;
+   gap: 15px;
+}
+
+.toast__head {
+   align-items: center;
+   display: flex;
+   gap: 10px;
+}
+
+.toast__text {
+   color: var(--color-grey500);
+}
+
+.toast__footer {
+   display: flex;
+   gap: 10px;
+   justify-content: flex-end;
+}
+
+.main__headline {
+   margin-bottom: 30px;
+}
+
+.headline__user {
+   align-items: center;
+   display: flex;
+   justify-content: space-between;
+   margin-bottom: 20px;
+}
+
+.headline__infos {
+   align-items: center;
+   display: flex;
+   gap: 20px;
+}
+
+.infos__image {
+   width: 72px;
+   border-radius: var(--borderRadius-XLarge);
+}
+
+.infos__title {}
+
+.headline__actions {
+   display: flex;
+   gap: 12px;
+}
+
+.tabs {
+   border-bottom: 1px solid var(--color-grey200);
+   display: flex;
+   justify-content: center;
+   gap: 20px;
+   margin-bottom: 48px;
+}
+
+.tabs__button {
+   padding: 16px 25px;
+   text-decoration: none;
+   color: var(--color-grey400);
+   border-bottom: 2px solid transparent;
+   font-weight: var(--fontWeight-medium);
+}
+
+.tabs__button:hover {
+   color: var(--color-grey500);
+}
+
+.tabs__button.active {
+   color: var(--color-primaryBase);
+   border-color: var(--color-primaryBase);
 }

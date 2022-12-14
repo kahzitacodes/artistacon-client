@@ -1,13 +1,18 @@
 import style from "./style.module.css";
 import logo from "../../assets/images/artistacon-logo-light.svg";
 import iconHeart from "../../assets/images/i-heart900.svg";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { AuthContext } from "../../contexts/authContext";
 import { useContext } from "react";
 
+const noNavibarRoutes = ["/cadastro", "/login", "/cadastro/artista"];
+
 export function Header(props) {
 
+   const { pathname } = useLocation();
    const { loggedInUser } = useContext(AuthContext);
+
+   if (noNavibarRoutes.some((item) => pathname.includes(item))) return null;
 
    return (
       <header className={style.header}>
@@ -26,7 +31,7 @@ export function Header(props) {
 
             <ul className={style.navbar__links}>
                {loggedInUser ?
-                  <li><Link to="/perfil">Olá {loggedInUser.user.name}</Link></li>
+                  <li><Link to="/minha-conta/perfil">Olá {loggedInUser.user.name}</Link></li>
                   : (
                      <>
                         <li><Link to="/login">Entre</Link></li>

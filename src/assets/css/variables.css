@@ -4,7 +4,8 @@
    --color-primary400: #FF80AD;
    --color-secondaryBase: #887EF9;
 
-   --color-errorBase: #FF5757;
+   --color-errorBase: #FF0D21;
+   --color-errorLighter: #FFF3F3;
    --color-errorLight: #FF7171;
 
    --color-grey50: #F9FAFB;
@@ -22,7 +23,7 @@
 
    --fontSize-headingH1: 72px;
    --fontSize-headingH2: 40px;
-   --fontSize-headingH3: 32px;
+   --fontSize-headingH3: 28px;
    --fontSize-headingH4: 24px;
    --fontSize-headingH5: 20px;
    --fontSize-headingH6: 18px;
@@ -48,4 +49,9 @@
    --borderRadius-small: 14px;
    --borderRadius-medium: 16px;
    --borderRadius-large: 20px;
+   --borderRadius-XLarge: 50%;
+
+   --shadow-XSmall: 0px 1px 3px 1px rgba(17, 24, 39, 0.02);
+   --shadow-small: 0px 2px 10px 1px rgba(17, 24, 39, 0.08);
+   --shadow-large: 0px 8px 30px 4px rgba(17, 24, 39, 0.1);
 }
