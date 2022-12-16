@@ -5,6 +5,8 @@ import { Navigate, useNavigate } from "react-router-dom";
 
 export function AccountNewProduct() {
 
+   const navigate = useNavigate();
+
    const [form, setForm] = useState({
       name: "",
       price: 0,
@@ -46,7 +48,7 @@ export function AccountNewProduct() {
          await api.post("/user/products/new-product", { ...form, image: imageURL });
 
          toast.success('Produto criado com sucesso!');
-         Navigate("/minha-conta/produtos");
+         navigate("/minha-conta/produtos");
 
       } catch (error) {
          toast.error('Alguma coisa deu errado');
