@@ -3,6 +3,7 @@ import { api } from "../api/api";
 import { useNavigate, Link } from "react-router-dom";
 import logo from "../assets/images/artistacon-logo-light.svg";
 import "../assets/css/forms.css";
+import { toast } from "react-hot-toast";
 
 export function Signup() {
   const navigate = useNavigate();
@@ -27,6 +28,7 @@ export function Signup() {
 
       navigate("/login");
     } catch (error) {
+      toast.error("Não deu certo");
       console.log(error);
     }
   }

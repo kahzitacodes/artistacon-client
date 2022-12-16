@@ -44,6 +44,7 @@ export function Login() {
         <div className="form-wrap">
           <label>Email:</label>
           <input
+            required
             className="form-control"
             type="email"
             name="email"
@@ -54,6 +55,7 @@ export function Login() {
         <div className="form-wrap">
           <label>Senha:</label>
           <input
+            required
             className="form-control"
             type="password"
             name="password"
