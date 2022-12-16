@@ -2,7 +2,7 @@ import axios from "axios";
 
 const apiURLs = {
   development: "http://localhost:8080/api/1.0",
-  production: "https://deploy-artistacon.cyclic.app",
+  production: "https://deploy-artistacon.cyclic.app/api/1.0",
 };
 
 const api = axios.create({ baseURL: apiURLs[process.env.NODE_ENV] });
