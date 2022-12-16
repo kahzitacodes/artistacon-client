@@ -23,7 +23,7 @@ export function SignUpArtist() {
       e.preventDefault();
 
       try {
-         await api.post("/user/signup", { ...form, role: "ARTIST" });
+         await api.post("/user/signup", { ...form, role: "ADMIN" });
 
          navigate("/login");
       } catch (error) {
