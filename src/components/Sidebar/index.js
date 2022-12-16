@@ -64,16 +64,14 @@ export function Sidebar(props) {
                   </>
                }
                <>
-                  {role !== "ADMIN" &&
-                     <li>
-                        <NavLink className={style.sidebar__link} to="/minha-conta/favoritos">
-                           <img src={iHeart} alt="Favoritos" />
-                           Favoritos
-                        </NavLink>
-                     </li>
-                  }
                   <li>
-                     <NavLink className={style.sidebar__link} to="/perfil">
+                     <NavLink className={style.sidebar__link} to="/minha-conta/favoritos">
+                        <img src={iHeart} alt="Favoritos" />
+                        Favoritos
+                     </NavLink>
+                  </li>
+                  <li>
+                     <NavLink className={style.sidebar__link} to="/minha-conta/configuracoes">
                         <img src={iTool} alt="Minha conta" />
                         Minha conta
                      </NavLink>

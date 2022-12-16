@@ -14,11 +14,26 @@
    flex-direction: column;
 }
 
+.form-signin-logo,
+.form-signin-logo img {
+   width: 100%;
+}
+
+
 .form-group {
    display: flex;
    flex-direction: column;
    gap: 20px;
    margin-bottom: 40px;
+}
+
+.form-row {
+   display: flex;
+   gap: 24px;
+}
+
+.form-row .form-wrap {
+   flex: 1 1 auto;
 }
 
 .form-wrap {
@@ -48,6 +63,7 @@
    color: var(--color-grey600);
    font-size: 16px;
    line-height: 32px;
+   height: 56px;
    padding: 12px 20px;
    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
@@ -86,6 +102,7 @@ textarea.form-control {
    overflow: hidden;
    height: 160px;
    width: 160px;
+   aspect-ratio: 1 / 1;
 }
 
 .form__avatar img,
@@ -105,6 +122,7 @@ textarea.form-control {
 .form__actions {
    justify-content: flex-end;
    display: flex;
+   justify-content: space-between;
 }
 
 input[type="file"] {
@@ -122,4 +140,8 @@ input[type="file"] {
    cursor: pointer;
    padding: 12px 20px;
    transition: background-color .15s ease-in-out;
+}
+
+.form__one-action {
+   justify-content: flex-end;
 }

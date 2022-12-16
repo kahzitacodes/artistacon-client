@@ -44,6 +44,15 @@
    background-color: var(--color-primary400);
 }
 
+.btn-mono {
+   color: var(--color-grey900);
+   background-color: var(--color-mono1);
+}
+
+.btn-mono:hover {
+   color: var(--color-primaryBase);
+}
+
 .btn-danger {
    color: var(--color-mono1);
    background-color: var(--color-errorBase);

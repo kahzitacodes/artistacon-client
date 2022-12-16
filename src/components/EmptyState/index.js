@@ -8,9 +8,27 @@ export function EmptyState(props) {
 
    return (
       <div className={style.container}>
+
          <img className={style.empty__img} src={emptyList} alt="Empty list" />
-         <p>Você ainda não tem {element}s. Adicione através do botão abaixo </p>
-         <Link to={linkTo} className="btn btn-lg btn-primary">Adicionar {element}</Link>
+
+         {element === "Favorito" ?
+            <p>Você ainda não tem {element}s.</p>
+
+            :
+
+            <p>Você ainda não tem {element}s. Adicione através do botão abaixo </p>
+
+         }
+
+
+         {linkTo ?
+            <Link
+               to={linkTo}
+               className="btn btn-lg btn-primary"
+            >
+               Adicionar {element}
+            </Link>
+            : null}
       </div>
    );
 }

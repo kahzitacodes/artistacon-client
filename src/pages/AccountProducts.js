@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { api } from "../../api/api";
-import { MediaCard } from "../../components/MediaCard";
+import { api } from "../api/api";
+import { MediaCard } from "../components/MediaCard";
 import toast from "react-hot-toast";
-import iconTrash from '../../assets/images/i-trash-danger.svg';
-import { EmptyState } from "../../components/EmptyState";
+import iconTrash from '../assets/images/i-trash-danger.svg';
+import { EmptyState } from "../components/EmptyState";
 import { Link, useNavigate } from "react-router-dom";
 
 export function AccountProducts(props) {
@@ -11,14 +11,14 @@ export function AccountProducts(props) {
    const [products, setProducts] = useState([]);
    const navigate = useNavigate();
 
-   async function deletProduct(productId, toastId) {
+   async function deleteProduct(productId, toastId) {
 
       try {
 
          await api.delete(`/user/products/${productId}`);
 
          toast.dismiss(toastId);
-         toast.success('Produto deletada com sucesso!');
+         toast.success('Produto deletado com sucesso!');
          navigate("/minha-conta/produtos");
 
       } catch (error) {
@@ -32,14 +32,14 @@ export function AccountProducts(props) {
             <div className="toast__content--vertical">
                <div className="toast__head">
                   <img src={iconTrash} alt="lixeira"></img>
-                  <h5>Excluir Produto?</h5>
+                  <h5>Excluir produto?</h5>
                </div>
                <p className="toast__text">O produto será deletado de forma permanente.</p>
                <div className="toast__footer">
                   <button className="btn btn-sm btn-link" onClick={() => toast.dismiss(t.id)}>
                      Cancelar
                   </button>
-                  <button className="btn btn-sm btn-danger" onClick={() => deletProduct(productId, t.id)}>
+                  <button className="btn btn-sm btn-danger" onClick={() => deleteProduct(productId, t.id)}>
                      Excluir
                   </button>
                </div>
@@ -48,7 +48,6 @@ export function AccountProducts(props) {
       }, {
          duration: Infinity,
       });
-
    }
 
    useEffect(() => {
@@ -85,9 +84,9 @@ export function AccountProducts(props) {
                return (
                   <>
                      <MediaCard
+                        type="product"
                         key={currentProduct._id}
                         id={currentProduct._id}
-                        type="product"
                         title={currentProduct.name}
                         price={currentProduct.price}
                         img={currentProduct.image}

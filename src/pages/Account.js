@@ -1,8 +1,8 @@
 import { useEffect, useState, useContext } from "react";
-import { api } from "../../api/api";
-import { AuthContext } from "../../contexts/authContext";
+import { api } from "../api/api";
+import { AuthContext } from "../contexts/authContext";
 import { Outlet, useNavigate } from "react-router-dom";
-import { Sidebar } from "../../components/Sidebar";
+import { Sidebar } from "../components/Sidebar";
 
 
 export function Account() {

@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { api } from "../../api/api";
-import { useNavigate } from "react-router-dom";
-import logo from "../../assets/images/artistacon-logo-light.svg";
-import "../../assets/css/forms.css";
+import { api } from "../api/api";
+import { useNavigate, Link } from "react-router-dom";
+import logo from "../assets/images/artistacon-logo-light.svg";
+import "../assets/css/forms.css";
 
 export function SignUpArtist() {
    const navigate = useNavigate();
@@ -13,35 +13,15 @@ export function SignUpArtist() {
       confirmPassword: "",
    });
 
-   // const [img, setImg] = useState("");
-
    function handleChange(e) {
       setForm({ ...form, [e.target.name]: e.target.value });
    }
 
-   // function handleImage(e) {
-   //   setImg(e.target.files[0]);
-   // }
-
-   // async function handleUpload() {
-   //   try {
-   //     const uploadData = new FormData();
-   //     uploadData.append("picture", img);
-
-   //     const response = await api.post("/upload-image", uploadData);
-
-   //     return response.data.url;
-   //   } catch (error) {
-   //     console.log(error);
-   //   }
-   // }
 
    async function handleSubmit(e) {
       e.preventDefault();
 
       try {
-         //const imgURL = await handleUpload();
-         // await api.post("/user/signup", { ...form, img: imgURL });
          await api.post("/user/signup", { ...form, role: "ARTIST" });
 
          navigate("/login");
@@ -52,7 +32,9 @@ export function SignUpArtist() {
 
    return (
       <main className="form-signin">
-         <img src={logo} alt="Logo Artista Con" />
+         <Link to="/">
+            <img className="form-signin-logo" src={logo} alt="Logo Artista Con" />
+         </Link>
          <h2 className="text-center">Entrar</h2>
 
          <form className="form" onSubmit={handleSubmit}>
@@ -112,6 +94,7 @@ export function SignUpArtist() {
             </div>
             <button className="btn btn-lg btn-primary" type="submit">Cadastrar</button>
          </form>
+         <p className="text-center form-line">Já possui uma conta? <Link to="/login">Login</Link></p>
       </main>
    );
 }

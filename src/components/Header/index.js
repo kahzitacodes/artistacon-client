@@ -1,6 +1,5 @@
 import style from "./style.module.css";
 import logo from "../../assets/images/artistacon-logo-light.svg";
-import iconHeart from "../../assets/images/i-heart900.svg";
 import { Link, useLocation } from "react-router-dom";
 import { AuthContext } from "../../contexts/authContext";
 import { useContext } from "react";
@@ -24,7 +23,7 @@ export function Header(props) {
 
 
             <ul className={style.navbar__menu}>
-               <li><Link to="/artistas">Artist's Alley</Link></li>
+               <li><Link to="/artistas">Artistas</Link></li>
                <li><Link to="/programacao">Programação</Link></li>
                <li><Link to="/sobre">Sobre</Link></li>
             </ul>
@@ -40,7 +39,7 @@ export function Header(props) {
                   )
                }
 
-               <li><Link className={style.linkIcon} to="/perfil/meus-favoritos">Favoritos<img src={iconHeart} alt="heart" /></Link></li>
+               <li><Link className={style.navbar__icon} to="minha-conta/favoritos">Favoritos</Link></li>
             </ul>
 
 

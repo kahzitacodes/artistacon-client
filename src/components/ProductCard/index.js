@@ -2,18 +2,25 @@ import style from "./style.module.css";
 
 export function ProductCard(props) {
 
-   const { favFunction, showFunction, image, name, price } = props;
+   const { saved, showDetails, handleSave, handleRemove, product, image, name, price } = props;
 
    return (
-      <div
-         onClick={showFunction}
-         className={style.card__wrapper}
-      >
-
+      <div className={style.card__wrapper}>
          <div className={style.card__image}>
 
-            <button onClick={favFunction} className={`btn-fav btn ${style.card__fav}`}>Favorite</button>
-            <img src={image} alt={name} />
+            <button
+               className={`btn-fav btn ${style.card__fav} ${saved === true ? 'active' : ''}`}
+
+               onClick={() => saved === true ? handleRemove(product) : handleSave(product)}
+            >
+               Salvar
+            </button>
+
+            <img
+               src={image}
+               alt={name}
+               onClick={() => showDetails(product)}
+            />
 
          </div>
 

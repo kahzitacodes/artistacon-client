@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { api } from "../../api/api";
+import { api } from "../api/api";
 import { useParams, Link, useNavigate } from "react-router-dom";
-import iconTrash from '../../assets/images/i-trash-danger.svg';
-import iconPencil from '../../assets/images/i-pencil900.svg';
+import iconTrash from '../assets/images/i-trash-danger.svg';
+import iconPencil from '../assets/images/i-pencil900.svg';
 import { toast } from "react-hot-toast";
 
 

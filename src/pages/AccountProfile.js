@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
-import { api } from "../../api/api";
-
+import { api } from "../api/api";
 
 export function AccountProfile() {
-
 
    const [user, setUser] = useState({});
 
@@ -96,8 +94,6 @@ export function AccountProfile() {
 
       fetchUserBio();
    }, [hasBio]);
-
-   console.log(form);
 
    return (
       <>

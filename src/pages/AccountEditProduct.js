@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { api } from "../../api/api";
+import { api } from "../api/api";
 import toast from "react-hot-toast";
 import { useParams, useNavigate } from "react-router-dom";
 
@@ -53,6 +53,7 @@ export function AccountEditProduct() {
          navigate(`/minha-conta/produtos/${params.productId}`);
 
       } catch (error) {
+         toast.error('Alguma coisa deu errado');
          console.log();
       }
    }
@@ -147,7 +148,7 @@ export function AccountEditProduct() {
                   />
                </div>
 
-               <div className="form__actions">
+               <div className="form__actions form__one-action">
                   <button className="btn btn-lg btn-primary">Salvar alterações</button>
                </div>
             </div>

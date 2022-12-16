@@ -1,9 +1,9 @@
 import { useState, useContext } from "react";
-import { AuthContext } from "../../contexts/authContext";
-import { api } from "../../api/api";
+import { AuthContext } from "../contexts/authContext";
+import { api } from "../api/api";
 import { useNavigate, Link } from "react-router-dom";
-import logo from "../../assets/images/artistacon-logo-light.svg";
-import "../../assets/css/forms.css";
+import logo from "../assets/images/artistacon-logo-light.svg";
+import "../assets/css/forms.css";
 
 export function Login() {
   const [form, setForm] = useState({
@@ -28,7 +28,7 @@ export function Login() {
 
       localStorage.setItem("loggedInUser", JSON.stringify(response.data));
 
-      navigate("/minha-conta/perfil");
+      navigate("/minha-conta");
     } catch (error) {
       console.log(error);
     }
@@ -36,7 +36,9 @@ export function Login() {
 
   return (
     <main className="form-signin">
-      <img src={logo} alt="Logo Artista Con" />
+      <Link to="/">
+        <img className="form-signin-logo" src={logo} alt="Logo Artista Con" />
+      </Link>
       <h2 className="text-center">Login</h2>
       <form className="form" onSubmit={handleSumit}>
         <div className="form-wrap">

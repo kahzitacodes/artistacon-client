@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Outlet, useParams, NavLink, Link } from "react-router-dom";
+import { Outlet, useParams, NavLink } from "react-router-dom";
 import { api } from "../api/api";
 import iconStore from "../assets/images/i-store-fff.svg";
 import iconShare from "../assets/images/i-share900.svg";
@@ -42,27 +42,37 @@ export function ArtistPage(props) {
                         <h1 className="infos__title heading__h4">{artist.name}</h1>
                      </div>
                      <div className="headline__actions">
-                        <Link className="btn btn-md btn-outline-secondary  btn-icon" to="/">
+                        <button className="btn btn-md btn-outline-secondary  btn-icon" to="/">
                            <img src={iconShare} alt="Share" />
                            Compartilhar
-                        </Link>
+                        </button>
 
-                        <Link className="btn btn-md btn-primary btn-icon" to="/">
+                        <button className="btn btn-md btn-primary btn-icon" onClick={() => window.open(artist.bio.store_URL, '_blank')}>
                            <img src={iconStore} alt="store" />
                            Visitar loja
-                        </Link>
+                        </button>
                      </div>
                   </div>
 
 
                   <div className="tabs">
-                     <NavLink className="tabs__button active" to={`/artistas/${artistId}/produtos`}>Produtos</NavLink>
-                     <NavLink className="tabs__button" to={"/"}>Sobre</NavLink>
+                     <NavLink
+                        className={`tabs__button ${({ isActive }) => (isActive ? "active" : "")}`}
+                        to={`/artistas/${artistId}/produtos`}
+                     >
+                        Produtos
+                     </NavLink>
+                     <NavLink
+                        className={`tabs__button ${({ isActive }) => (isActive ? "active" : "")}`}
+                        to={`/artistas/${artistId}/sobre`}
+                     >
+                        Sobre
+                     </NavLink>
                   </div>
 
                   <div className="tabs__content">
 
-                     <Outlet context={[artistId]} />
+                     <Outlet context={[artist]} />
 
                   </div>
                </div>

@@ -26,9 +26,14 @@
    color: var(--color-grey500);
 }
 
+.navbar__menu a:hover {
+   color: var(--color-primaryBase);
+}
+
 .navbar__links {
    display: flex;
-   gap: 20px;
+   gap: 12px;
+   align-items: center;
 }
 
 .navbar__links a {
@@ -36,7 +41,18 @@
    color: var(--color-grey900);
 }
 
-.navbar__links .linkIcon {
+.navbar__links a:hover {
+   color: var(--color-primaryBase);
+}
+
+.navbar__icon {
    display: flex;
+   height: 40px;
    text-indent: -9999px;
+   width: 40px;
+   background: url(../../assets/images/i-heart900.svg) no-repeat center;
+}
+
+.navbar__icon:hover {
+   background-image: url(../../assets/images/i-heart-primary.svg);
 }

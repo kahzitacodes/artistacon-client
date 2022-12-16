@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { api } from "../../api/api";
+import { api } from "../api/api";
 import toast from "react-hot-toast";
 
 export function AccountNewProduct() {
@@ -48,6 +48,7 @@ export function AccountNewProduct() {
          toast.success('Produto criado com sucesso!');
 
       } catch (error) {
+         toast.error('Alguma coisa deu errado');
          console.log();
       }
    }
@@ -129,7 +130,7 @@ export function AccountNewProduct() {
                </div>
 
                <div className="form__actions">
-                  <button className="btn btn-lg btn-primary">Salvar alterações</button>
+                  <button className="btn btn-lg btn-primary">Salvar</button>
                </div>
             </div>
          </form>
