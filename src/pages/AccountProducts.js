@@ -70,7 +70,7 @@ export function AccountProducts(props) {
          {products.length === 0 ?
             <>
                <h3 className="form__title text-center">Produtos</h3>
-               <EmptyState element="Produto" linkTo="/produtos/novo-produto" />
+               <EmptyState element="Produto" linkTo="/minha-conta/produtos/novo-produto" />
             </> :
 
             <div className="heading__wrapper">

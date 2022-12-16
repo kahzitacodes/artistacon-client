@@ -91,7 +91,7 @@ export function ArtistProducts(props) {
                      return (
                         <ProductCard
                            saved={userFavorites.includes(currentProduct._id)}
-                           handleSave={() => (handleSave(currentProduct._id))}
+                           handleSave={handleSave}
                            showDetails={showDetails}
                            key={currentProduct._id}
                            product={currentProduct}

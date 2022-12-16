@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { api } from "../api/api";
 import toast from "react-hot-toast";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export function AccountNewProduct() {
 
@@ -44,8 +45,8 @@ export function AccountNewProduct() {
          const imageURL = await handleUpload();
          await api.post("/user/products/new-product", { ...form, image: imageURL });
 
-
          toast.success('Produto criado com sucesso!');
+         Navigate("/minha-conta/produtos");
 
       } catch (error) {
          toast.error('Alguma coisa deu errado');

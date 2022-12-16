@@ -38,6 +38,7 @@ export function Account() {
       <div className="main__account__container container">
 
         <Sidebar
+          className="main__account__sidebar"
           name={user.name}
           role={user.role}
           email={user.email}

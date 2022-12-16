@@ -78,7 +78,7 @@ export function AccountSchedule() {
          {schedule.length === 0 ?
             <>
                <h3 className="form__title text-center">Programação</h3>
-               <EmptyState element="Produto" linkTo="/minha-conta/programacao/nova-atividade" />
+               <EmptyState element="Atividade" linkTo="/minha-conta/programacao/nova-atividade" />
             </> :
 
             <>
