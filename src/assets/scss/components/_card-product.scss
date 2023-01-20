@@ -1,0 +1,72 @@
+.product-card {
+   background-color: transparent;
+   border: none;
+   border-radius: 0;
+   &__img {
+      cursor: pointer;
+      aspect-ratio: 1 / 1;
+      transition: $transition-base;
+      overflow: hidden;
+      img {
+         width: 100%;
+      }
+      &:hover {
+         box-shadow: $box-shadow-lg;
+      }
+   }
+   .name {
+      cursor: pointer;
+      transition: $transition-base;
+      font-size: 1rem;
+      font-weight: 600;
+      &:hover {
+         color: $primary;
+      }
+   }
+   .price {
+      color: $info;
+      font-weight: 600;
+      font-size: 1.125rem;
+   }
+   .artist-img {
+      width: 24px;
+   }
+   .artist-name {
+      text-decoration: none;
+      font-size: 0.875rem;
+      color: $gray-600;
+      &:hover {
+         color: $primary;
+      }
+   }
+}
+
+.btn-save {
+   border: 0;
+   box-shadow: $box-shadow-sm;
+   background-color: $white;
+   border-radius: $border-radius-pill;
+   display: flex;
+   align-items: center;
+   height: 44px;
+   text-indent: 9999px;
+   overflow: hidden;
+   width: 44px;
+   justify-content: center;
+   top: 0.5rem;
+   right: 0.5rem;
+   &::before {
+      content: "";
+      background: url("../../assets/images/i-heart900.svg") no-repeat center center;
+      height: 20px;
+      position: absolute;
+      width: 20px;
+   }
+   &:hover::before {
+      background-image: url("../../assets/images/i-heart-primary.svg");
+   }
+
+   &.active::before {
+      background-image: url("../../assets/images/i-heart-fill.svg");
+   }
+}

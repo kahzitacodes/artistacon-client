@@ -1,0 +1,19 @@
+.tabs {
+   border-bottom: 1px solid $gray-200;
+   gap: 20px;
+   margin-bottom: 48px;
+   &__button {
+      padding: 16px 25px;
+      text-decoration: none;
+      color: $gray-500;
+      border-bottom: 2px solid transparent;
+      font-weight: 500;
+      &:hover {
+         color: $gray-600;
+      }
+      &.active {
+         color: $primary;
+         border-color: $primary;
+      }
+   }
+}

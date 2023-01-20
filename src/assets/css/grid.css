@@ -1,18 +1,18 @@
-.container {
+/* .container {
    width: 100%;
    margin: 0 auto;
    padding-left: 20px;
    padding-right: 20px;
-}
+} */
 
-.grid__cards {
+/* .grid__cards {
    display: grid;
    grid-template-columns: repeat(1, 1fr);
    gap: 20px;
-}
+} */
 
 
-@media (min-width: 576px) {
+/* @media (min-width: 576px) {
    .container {
       width: 540px;
    }
@@ -60,4 +60,4 @@
    .container {
       width: 1320px;
    }
-}
+} */

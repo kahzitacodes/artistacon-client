@@ -1,0 +1,29 @@
+.feature {
+   margin-bottom: 40px;
+
+   &-discord {
+      background-color: var(--color-grey50);
+      padding: 80px 0;
+      margin-bottom: 0;
+   }
+   &__content {
+      margin-bottom: 2rem;
+   }
+   &__text {
+      font-size: var(--fontSize-bodyXLarge);
+      line-height: var(--lineHeight-large);
+   }
+   &__image {
+      img {
+         width: 100%;
+      }
+   }
+}
+
+@media (min-width: 992px) {
+   .feature {
+      &__content {
+         margin-bottom: 0;
+      }
+   }
+}

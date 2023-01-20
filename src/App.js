@@ -1,29 +1,32 @@
 import { Routes, Route } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
-import { Home } from "./pages/Home";
+
 import { Login } from "./pages/Login";
 import { Signup } from "./pages/Signup";
-import { AuthContextComponent } from "./contexts/authContext";
-import { Account } from "./pages/Account";
 import { SignUpArtist } from "./pages/SignUpArtist";
+import { Home } from "./pages/site/Home";
+import { About } from "./pages/site/About";
+import { Schedule } from "./pages/site/Schedule";
 import { ErrorPage } from "./pages/ErrorPage";
-import { AccountProfile } from "./pages/AccountProfile";
-import { AccountProducts } from "./pages/AccountProducts";
-import { AccountNewProduct } from "./pages/AccountNewProduct";
-import { AccountEditProduct } from "./pages/AccountEditProduct";
-import { AccountProduct } from "./pages/AccountProduct";
-import { ArtistAlley } from "./pages/ArtistAlley";
-import { ArtistPage } from "./pages/ArtistPage";
-import { ArtistProducts } from "./pages/ArtistProducts";
-import { ArtistAbout } from "./pages/ArtistAbout";
-import { AccountSchedule } from "./pages/AccountSchedule";
-import { ScheduleNew } from "./pages/AccountScheduleNew";
-import { ScheduleEdit } from "./pages/AccountScheduleEdit";
-import { AccountFavorites } from "./pages/AccountFavorites";
-import { AccountConfig } from "./pages/AccountConfig";
-import { About } from "./pages/About";
-import { Schedule } from "./pages/Schedule";
 
+import { ArtistAlley } from "./pages/site/ArtistAlley";
+import { ArtistPage } from "./pages/site/ArtistPage";
+import { ArtistProducts } from "./pages/site/ArtistProducts";
+import { ArtistAbout } from "./pages/site/ArtistAbout";
+
+import { Account } from "./pages/account/Account";
+import { AccountProfile } from "./pages/account/AccountProfile";
+import { AccountProducts } from "./pages/account/AccountProducts";
+import { AccountNewProduct } from "./pages/account/AccountNewProduct";
+import { AccountEditProduct } from "./pages/account/AccountEditProduct";
+import { AccountProduct } from "./pages/account/AccountProduct";
+import { AccountSchedule } from "./pages/account/AccountSchedule";
+import { ScheduleNew } from "./pages/account/AccountScheduleNew";
+import { ScheduleEdit } from "./pages/account/AccountScheduleEdit";
+import { AccountFavorites } from "./pages/account/AccountFavorites";
+import { AccountConfig } from "./pages/account/AccountConfig";
+
+import { AuthContextComponent } from "./contexts/authContext";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import { ProtectedAdminRoute } from "./components/ProtectedAdminRoute";
 

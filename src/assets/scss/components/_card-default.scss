@@ -1,0 +1,59 @@
+.d-card {
+   border: 1px solid $gray-200;
+   border-radius: $border-radius-xl;
+   display: flex;
+   gap: 24px;
+   padding: 1rem;
+
+   &__image img {
+      width: 100%;
+      border-radius: $border-radius-lg;
+      aspect-ratio: 1 / 1;
+   }
+
+   &__content {
+      flex: 1 1 auto;
+      gap: 20px;
+   }
+
+   &__title {
+      font-weight: 600;
+      line-height: 1.7rem;
+   }
+}
+.card-body {
+   padding: 0 0 0 1rem;
+}
+
+.card__infos {
+   color: $gray-500;
+   margin: 0;
+}
+
+.card__time,
+.card__date,
+.card__price {
+   align-items: center;
+   color: $gray-900;
+   display: flex;
+   font-size: 1rem;
+   font-weight: 700;
+   position: relative;
+}
+
+.card__time::before,
+.card__date::before {
+   content: "";
+   position: absolute;
+   left: -28px;
+   width: 20px;
+   height: 20px;
+}
+
+.card__time::before {
+   background: url("../../assets/images/i-clock300.svg") no-repeat;
+}
+
+.card__date::before {
+   background: url("../../assets/images/i-calendar300.svg") no-repeat;
+}

@@ -1,0 +1,46 @@
+.header {
+   padding-bottom: 0;
+   &__container {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      padding-left: 20px;
+      padding-right: 20px;
+   }
+
+   &__logo {
+      display: flex;
+   }
+}
+
+.navbar {
+   &__menu {
+      gap: 2.5rem;
+      a {
+         text-decoration: none;
+         color: $gray-600;
+         &:hover {
+            color: $primary;
+         }
+      }
+   }
+   &__links {
+      gap: 1rem;
+      a {
+         text-decoration: none;
+         color: $gray-900;
+         &:hover {
+            color: $primary;
+         }
+      }
+   }
+   &__icon {
+      display: flex;
+      height: 40px;
+      text-indent: -9999px;
+      width: 40px;
+      background: url(../images/i-heart900.svg) no-repeat center;
+      &:hover {
+         background-image: url(../images/i-heart-primary.svg);
+      }
+   }
+}

@@ -10,11 +10,10 @@ export function ProtectedAdminRoute(props) {
   const parsedUser = JSON.parse(loggedInUser || '""');
 
   useEffect(() => {
-    console.log(parsedUser);
     if (parsedUser.user.role !== "ADMIN") {
       navigate("/login");
     }
-  }, []);
+  }, [navigate, parsedUser.user.role]);
 
   return <Component />;
 }

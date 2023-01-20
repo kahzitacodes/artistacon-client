@@ -1,0 +1,25 @@
+.hero {
+   margin-bottom: 2rem;
+   margin-top: 2rem;
+
+   &__subtitle {
+      color: var(--color-grey600);
+   }
+
+   &__image {
+      margin-bottom: 2rem;
+      img {
+         width: 100%;
+      }
+   }
+}
+
+@media (min-width: 992px) {
+   .hero {
+      margin-bottom: 4rem;
+      margin-top: 2.5rem;
+      &__image {
+         margin-bottom: 0;
+      }
+   }
+}

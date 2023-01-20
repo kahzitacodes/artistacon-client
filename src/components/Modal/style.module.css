@@ -15,10 +15,3 @@
    opacity: 1;
    pointer-events: visible;
 }
-
-.modal__header {
-   border-bottom: 1px solid var(--color-grey200);
-   display: flex;
-   justify-content: space-between;
-   padding: 20px 24px 20px 12px;
-}

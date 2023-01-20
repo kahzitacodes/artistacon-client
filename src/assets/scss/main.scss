@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+$font-family-sans-serif: "Popins", sans-serif !important;
+
+$enable-gradients: false;
+$enable-shadows: false;
+$enable-cssgrid: true;
+
+// Customize some defaults
+$body-color: #333;
+$body-bg: #fff;
+
+$border-radius: 0.4rem;
+
+$gray-900: #111827;
+$primary: #ff6099;
+$info: #887ef9;
+
+$btn-box-shadow: none;
+
+@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+@import "./sections/all";
+@import "./layout/all";
+@import "./components/all";
+@import "./pages/all";
+
+body {
+  color: $gray-700;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  color: $gray-900;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+hr {
+  opacity: 0.12;
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.middle {
+  flex: 1 0 auto;
+}
+
+.main-divider,
+.main-divider-top {
+  border-top: 1px solid var(--color-grey100);
+}
+.main-divider {
+  padding: 60px 0;
+}
+
+.main-divider-top {
+  padding: 60px 0 0;
+}
+
+.link {
+  border: none;
+  background: none;
+  padding: 0;
+  text-decoration: none;
+}
+
+.btn-primary {
+  --bs-btn-border-color: $primary;
+  --bs-btn-color: var(--bs-white);
+  --bs-btn-hover-color: var(--bs-white);
+}
+
+.btn-light:hover {
+  background-color: $gray-200;
+  border: 1px solid $gray-200;
+}
+.btn {
+  --bs-btn-border-radius: 0.875rem;
+  --bs-btn-padding-y: 0.75rem;
+  --bs-btn-padding-x: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-lg {
+  --bs-btn-padding-y: 1rem;
+  --bs-btn-padding-x: 2.5rem;
+  --bs-btn-font-size: 1rem;
+  --bs-btn-border-radius: 1rem;
+  --bs-btn-font-weight: 600;
+}
+
+.headline {
+  margin-bottom: 30px;
+
+  &__text {
+    margin-top: 16px;
+  }
+}
+
+.pre-title {
+  color: $info;
+  font-size: 1.125rem;
+  font-weight: 600;
+}

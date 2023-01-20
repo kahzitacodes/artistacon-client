@@ -1,0 +1,103 @@
+.form-signin-logo {
+   width: 100%;
+   margin-bottom: 1.25rem;
+   img {
+      width: 80%;
+   }
+}
+
+.form-wrap {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   margin-bottom: 28px;
+}
+
+.form {
+   &__label {
+      color: $gray-500;
+      font-size: 0.875rem;
+      font-weight: 600;
+   }
+
+   &__helper {
+      font-size: 0.75rem;
+      color: $gray-500;
+   }
+
+   &__avatar,
+   &__image {
+      overflow: hidden;
+      height: 160px;
+      width: 160px;
+      img {
+         width: 100%;
+      }
+   }
+   &__avatar {
+      background: url("https://res.cloudinary.com/dpxfwxwfu/image/upload/v1670781257/default-imgs/user__img_default_wz8xpx.png")
+         no-repeat 100% 100% / cover;
+      border-radius: $border-radius-pill;
+   }
+   &__image {
+      background: url("https://res.cloudinary.com/dpxfwxwfu/image/upload/v1670971311/default-imgs/product__img_default_yrdhct.png")
+         no-repeat 100% 100% / cover;
+      border-radius: $border-radius-sm;
+      aspect-ratio: 1 / 1;
+   }
+}
+
+.form-wrap-upload {
+   display: flex;
+   align-items: center;
+   gap: 24px;
+}
+
+.form-control {
+   font-family: "Inter", sans-serif;
+   border: 1px solid $gray-300;
+   border-radius: 1rem;
+   color: $gray-900;
+   font-size: 1rem;
+   line-height: 2rem;
+   padding: 0.75rem 1.25rem;
+   &:hover {
+      border: 1px solid $gray-400;
+   }
+
+   &:focus {
+      border-color: $info;
+      outline: 0;
+      box-shadow: 0 0 0 0.4rem rgb(136 126 249/ 25%);
+   }
+}
+
+label.form-control,
+select.form-control {
+   height: 56px;
+}
+
+textarea.form-control {
+   font-size: 1rem;
+   line-height: 1.5rem;
+}
+
+input[type="file"] {
+   display: none;
+}
+
+.custom-file-upload {
+   display: inline-block;
+   border: 2px solid $secondary;
+   border-radius: $border-radius-xl;
+   font-size: 0.875rem;
+   font-weight: 500;
+   color: $gray-900;
+   cursor: pointer;
+   padding: 0.75rem 1.5rem;
+   transition: $transition-base;
+   &:hover {
+      background-color: $secondary;
+      color: $white;
+   }
+}

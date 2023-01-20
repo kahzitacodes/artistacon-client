@@ -10,7 +10,7 @@ export function Modal(props) {
 
          <div className={style.modal__header}>
             <button
-               onClick={hideModal}
+               onClick={() => hideModal()}
                className="btn btn-back-round">Fechar
             </button>
             <button

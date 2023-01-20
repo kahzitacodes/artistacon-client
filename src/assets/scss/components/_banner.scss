@@ -1,0 +1,52 @@
+.banner {
+   background-color: $info;
+   border-radius: $border-radius-2xl;
+   color: $white;
+   margin-top: 60px;
+   padding: 2.25rem;
+   margin-bottom: 60px;
+
+   &__pre-title {
+      color: $gray-900;
+      font-size: $font-size-lg;
+      margin: 0;
+      margin-bottom: 8px;
+   }
+
+   &__title {
+      color: $white;
+   }
+   &__text p {
+      color: var(--color-mono1);
+      font-size: var(--fontSize-headingH5);
+      font-weight: var(--fontWeight-light);
+      margin-bottom: 0;
+   }
+
+   &__image {
+      flex: 0 0 180px;
+   }
+}
+
+@media (min-width: 576px) {
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media (min-width: 992px) {
+   .banner {
+      margin-top: 100px;
+      margin-bottom: 60px;
+      padding: 40px;
+   }
+}
+
+@media (min-width: 1200px) {
+   .banner {
+      margin-bottom: 100px;
+   }
+}
+
+@media screen and (min-width: 1400px) {
+}

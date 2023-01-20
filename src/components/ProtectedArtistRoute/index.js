@@ -10,11 +10,10 @@ export function ProtectedArtistRoute(props) {
    const parsedUser = JSON.parse(loggedInUser || '""');
 
    useEffect(() => {
-      console.log(parsedUser);
       if (parsedUser.user.role !== "ARTIST") {
          navigate("/login");
       }
-   }, []);
+   }, [navigate, parsedUser.user.role]);
 
    return <Component />;
 }

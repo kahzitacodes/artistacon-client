@@ -1,0 +1,47 @@
+.sidebar {
+   background: $white;
+   border: 1px solid $gray-200;
+   border-radius: $border-radius-xl;
+   flex: 0 0 280px;
+
+   &__user {
+      gap: 0.5rem;
+      padding: 1.5rem;
+      text-align: center;
+      .user-name {
+         color: $gray-500;
+         font-size: 1rem;
+      }
+   }
+
+   > nav {
+      padding: 1rem;
+   }
+
+   &__link {
+      align-items: center;
+      background: none;
+      border: none;
+      color: $gray-600;
+      cursor: pointer;
+      display: flex;
+      gap: 1rem;
+      padding: 1rem;
+      text-decoration: none;
+
+      &.active,
+      &.active:hover {
+         cursor: unset;
+         background-color: $gray-100;
+         border-radius: $border-radius-xl;
+         display: flex;
+         color: $gray-700;
+         gap: 16px;
+         text-decoration: none;
+      }
+
+      &:hover {
+         color: $primary;
+      }
+   }
+}
