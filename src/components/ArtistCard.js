@@ -9,7 +9,7 @@ export function ArtistCard(props) {
 
          <img src={avatar} alt={name} className="card-img" />
 
-         <div class="card-img-overlay d-flex align-items-end">
+         <div className="card-img-overlay d-flex align-items-end">
 
             <div className="card__info flex-grow-1 text-center">
                <span className="card__name fw-bold">{name}</span>

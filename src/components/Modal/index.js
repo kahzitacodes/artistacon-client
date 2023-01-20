@@ -1,23 +1,19 @@
 import style from "./style.module.css";
-import iconHeart from "../../assets/images/i-heart900.svg";
+import { Heart, X } from "react-feather";
 
 export function Modal(props) {
 
-   const { hideModal, show, saveFunction } = props;
-
    return (
-      <div className={`${style.modal} ${show ? style.show : ''}`}>
+      <div className={`${style.modal} ${props.show ? style.show : null}`}>
 
          <div className={style.modal__header}>
-            <button
-               onClick={() => hideModal()}
-               className="btn btn-back-round">Fechar
+            <button onClick={props.handleClose} className="link link-secondary">
+               <X />Fechar
             </button>
             <button
-               onClick={saveFunction}
-               className="btn btn-md btn-outline-secondary btn-icon"
+               className="btn btn-md btn-outline-primary"
             >
-               <img src={iconHeart} alt="salvar" />
+               <Heart />
                Salvar
             </button>
          </div>

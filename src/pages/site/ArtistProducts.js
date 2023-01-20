@@ -19,14 +19,14 @@ export function ArtistProducts() {
    const [userFavorites, setUserFavorites] = useState([]);
    const [updateFavorites, setUpdateFavorites] = useState(false);
 
-   const showDetails = (product) => {
+   useEffect(() => {
+      if (Object.keys(productShow).length === 0) {
+         return;
+      }
       setShow(true);
-      setProductShow({ ...product });
-   };
+   }, [productShow]);
 
-   function hideModal() {
-      setShow(false);
-   }
+
 
    useEffect(() => {
       async function fetchFavorites() {
@@ -78,23 +78,25 @@ export function ArtistProducts() {
 
    return (
       <>
-         <Modal show={show} hideModal={hideModal}>
-            <div className="modal__product">
-               <img className="modal__image" src={productShow.image} alt={productShow.name} />
+         <Modal show={show} handleClose={() => setShow(false)}>
+            {productShow ?
+               <div className="modal__product">
+                  <img className="modal__image" src={productShow.image} alt={productShow.name} />
 
-               <div className="modal__content">
+                  <div className="modal__content">
 
-                  <h3 className="modal__title">{productShow.name}</h3>
-                  <h5><strong className="modal__price">R$ {productShow.price}</strong></h5>
-                  <p className="modal__text">{productShow.description}</p>
+                     <h3 className="modal__title">{productShow.name}</h3>
+                     <h5><strong className="modal__price">R$ {productShow.price}</strong></h5>
+                     <p className="modal__text">{productShow.description}</p>
 
-                  <button onClick={productShow.url} className="btn btn-lg btn-primary">
-                     Comprar na loja do artista
-                  </button>
+                     <a href={productShow.url} className="btn btn-lg btn-primary">
+                        Comprar na loja do artista
+                     </a>
+
+                  </div>
 
                </div>
-
-            </div>
+               : null}
          </Modal>
 
          {loading ? (<p className="text-center set__loading">Loading...</p>) :
@@ -108,7 +110,7 @@ export function ArtistProducts() {
                               <ProductCard
                                  saved={userFavorites.includes(currentProduct._id)}
                                  handleSave={() => (handleSave(currentProduct._id))}
-                                 showDetails={() => showDetails(currentProduct)}
+                                 showDetails={() => setProductShow(currentProduct)}
                                  product={currentProduct}
                                  image={currentProduct.image}
                                  name={currentProduct.name}
