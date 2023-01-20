@@ -2,7 +2,7 @@
    margin-bottom: 40px;
 
    &-discord {
-      background-color: var(--color-grey50);
+      background-color: $gray-100;
       padding: 80px 0;
       margin-bottom: 0;
    }
@@ -10,8 +10,8 @@
       margin-bottom: 2rem;
    }
    &__text {
-      font-size: var(--fontSize-bodyXLarge);
-      line-height: var(--lineHeight-large);
+      font-size: 1.125rem;
+      line-height: 2rem;
    }
    &__image {
       img {

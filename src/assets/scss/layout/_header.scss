@@ -1,20 +1,33 @@
 .header {
-   padding-bottom: 0;
    &__container {
-      padding-top: 1rem;
-      padding-bottom: 1rem;
-      padding-left: 20px;
-      padding-right: 20px;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
    }
 
    &__logo {
       display: flex;
    }
+   .navbar-toggler {
+      padding: 0.5rem 0.6rem;
+   }
+   .navbar-collapse {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      height: 0;
+      overflow: hidden;
+      transition: height 0.35s ease;
+      &.show {
+         height: 200px;
+         margin-top: 2rem;
+         margin-bottom: 1rem;
+      }
+   }
 }
 
 .navbar {
    &__menu {
-      gap: 2.5rem;
+      gap: 1rem;
       a {
          text-decoration: none;
          color: $gray-600;
@@ -33,14 +46,49 @@
          }
       }
    }
-   &__icon {
+   &__favorites {
+      align-items: center;
       display: flex;
-      height: 40px;
-      text-indent: -9999px;
-      width: 40px;
-      background: url(../images/i-heart900.svg) no-repeat center;
-      &:hover {
-         background-image: url(../images/i-heart-primary.svg);
+      gap: 0.5rem;
+      svg {
+         height: 20px;
+         width: 20px;
+      }
+   }
+}
+
+@media (min-width: 992px) {
+   .header {
+      &__container {
+         padding-top: 1rem;
+         padding-bottom: 1rem;
+      }
+      .navbar-collapse {
+         height: auto;
+         overflow: auto;
+      }
+   }
+   .navbar {
+      &__menu {
+         gap: 2.5rem;
+      }
+      &__favorites {
+         align-items: center;
+         display: flex;
+         i:hover {
+            color: $primary;
+         }
+      }
+      .navbar-collapse {
+         flex-direction: row;
+         align-items: flex-start;
+         height: auto;
+         overflow: auto;
+         transition: none;
+         &.show {
+            height: auto;
+            margin: 0;
+         }
       }
    }
 }
