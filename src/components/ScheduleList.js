@@ -33,7 +33,7 @@ export function ScheduleList() {
    }).sort((date1, date2) => date1.dateComplete - date2.dateComplete);
 
    return (
-      <div className="schedule">
+      <div className="schedule-list">
          <div className="container">
             <div className="feature__headline">
                <p className="pre-title fw-bold mb-3">Lives</p>
