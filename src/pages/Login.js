@@ -27,7 +27,15 @@ export function Login() {
       const response = await api.post("/user/login", form);
       setLoggedInUser({ ...response.data });
       localStorage.setItem("loggedInUser", JSON.stringify(response.data));
-      navigate("/minha-conta/configuracoes");
+      if (response.data.user.role === "ARTIST") {
+        navigate("/minha-conta/perfil");
+      }
+      if (response.data.user.role === "ADMIN") {
+        navigate("/minha-conta/configuracoes");
+      }
+      if (response.data.user.role === "USER") {
+        navigate("/minha-conta/favoritos");
+      }
 
     } catch (error) {
 

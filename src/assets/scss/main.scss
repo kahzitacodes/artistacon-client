@@ -90,11 +90,19 @@ hr {
   background: none;
   padding: 0;
   text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .btn-primary {
   --bs-btn-border-color: $primary;
   --bs-btn-color: var(--bs-white);
+  --bs-btn-hover-color: var(--bs-white);
+}
+
+.btn-outline-primary {
   --bs-btn-hover-color: var(--bs-white);
 }
 

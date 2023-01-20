@@ -20,13 +20,19 @@ export function ArtistProducts() {
    const [updateFavorites, setUpdateFavorites] = useState(false);
 
    useEffect(() => {
+
       if (Object.keys(productShow).length === 0) {
          return;
       }
+
       setShow(true);
+
    }, [productShow]);
 
-
+   const handleClose = () => {
+      setShow(false);
+      setProductShow({});
+   };
 
    useEffect(() => {
       async function fetchFavorites() {
@@ -36,11 +42,12 @@ export function ArtistProducts() {
             setUserFavorites(response.data.favorites);
 
          } catch (error) {
+            navigate("/login");
             console.log(error);
          }
       }
       fetchFavorites();
-   }, [updateFavorites]);
+   }, [navigate, updateFavorites]);
 
    async function handleSave(product) {
 
@@ -49,13 +56,29 @@ export function ArtistProducts() {
             navigate("/login");
          }
          await api.post(`/user/favorites/${product}`);
-         toast.success("Produto salvo!");
+         toast.success("Produto salvo nos seus favoritos");
+         setUpdateFavorites(true);
+
+      } catch (error) {
+         console.log(error);
+      }
+
+   }
+
+   async function handleRemove(product) {
+      try {
+         if (!loggedInUser) {
+            navigate("/login");
+         }
+         await api.delete(`/user/favorites/${product}`);
+         toast.success('Produto removido dos seus favoritos');
          setUpdateFavorites(true);
 
       } catch (error) {
          console.log(error);
       }
    }
+
 
    useEffect(() => {
       async function fetchProducts() {
@@ -78,26 +101,11 @@ export function ArtistProducts() {
 
    return (
       <>
-         <Modal show={show} handleClose={() => setShow(false)}>
-            {productShow ?
-               <div className="modal__product">
-                  <img className="modal__image" src={productShow.image} alt={productShow.name} />
-
-                  <div className="modal__content">
-
-                     <h3 className="modal__title">{productShow.name}</h3>
-                     <h5><strong className="modal__price">R$ {productShow.price}</strong></h5>
-                     <p className="modal__text">{productShow.description}</p>
-
-                     <a href={productShow.url} className="btn btn-lg btn-primary">
-                        Comprar na loja do artista
-                     </a>
-
-                  </div>
-
-               </div>
-               : null}
-         </Modal>
+         <Modal
+            show={show}
+            handleClose={handleClose}
+            productShow={productShow}
+         />
 
          {loading ? (<p className="text-center set__loading">Loading...</p>) :
 
@@ -110,6 +118,7 @@ export function ArtistProducts() {
                               <ProductCard
                                  saved={userFavorites.includes(currentProduct._id)}
                                  handleSave={() => (handleSave(currentProduct._id))}
+                                 handleRemove={() => (handleRemove(currentProduct._id))}
                                  showDetails={() => setProductShow(currentProduct)}
                                  product={currentProduct}
                                  image={currentProduct.image}

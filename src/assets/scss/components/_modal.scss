@@ -9,6 +9,7 @@
    transition: opacity 0.15s ease-in-out;
    pointer-events: none;
    opacity: 0;
+   overflow-y: auto;
 }
 
 .show {
