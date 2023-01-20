@@ -12,9 +12,6 @@ export function ArtistAbout(props) {
                <h4 className="mb-3">Sobre o artista</h4>
                <p>{artist.bio.bio}</p>
             </div>
-
-
-
          </div>
 
          <div className="col-12 offset-lg-1 col-lg-4">

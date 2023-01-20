@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { api } from "../../api/api";
+import toast from "react-hot-toast";
 
 export function AccountProfile() {
 
@@ -72,6 +73,8 @@ export function AccountProfile() {
          }
 
          await api.put("/user/bio", { ...form, avatar: avatarURL });
+
+         toast.success('Seu perfil foi salvo com sucesso!');
 
       } catch (error) {
          console.log(error);
