@@ -11248,6 +11248,15 @@ textarea.form-control-lg {
     margin-bottom: 0;
   }
 }
+.artists-list {
+  background-color: #f8f9fa;
+  padding: 90px 0;
+}
+
+.schedule {
+  padding: 80px 0 60px;
+}
+
 .header__container {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -11416,6 +11425,7 @@ textarea.form-control-lg {
   border-radius: 1rem;
   overflow: hidden;
   transition: all 0.2s ease-in-out;
+  aspect-ratio: 1/1;
 }
 .card__wrapper .card__info {
   background-color: #fff;
@@ -11715,6 +11725,7 @@ input[type=file] {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  height: 100%;
 }
 .s-card__vertical .s-card__image {
   position: relative;
@@ -11722,6 +11733,9 @@ input[type=file] {
 .s-card__vertical .s-card__image img {
   width: 100%;
   aspect-ratio: 1/1;
+}
+.s-card__vertical .s-card__title {
+  margin-bottom: 1rem;
 }
 .s-card__vertical .s-card__content {
   padding: 1.25rem;

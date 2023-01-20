@@ -13,12 +13,7 @@ export function ArtistAbout(props) {
                <p>{artist.bio.bio}</p>
             </div>
 
-            {artist.bio.categories.length === 0 ? (
-               <div className="mb-3">
-                  <h4 className="mb-3">Categorias</h4>
-                  {/* to-do */}
-               </div>
-            ) : null}
+
 
          </div>
 

@@ -4,6 +4,7 @@
    border-radius: $border-radius-xl;
    overflow: hidden;
    transition: $transition-base;
+   aspect-ratio: 1 /1;
 
    .card__info {
       background-color: $white;

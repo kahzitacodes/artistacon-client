@@ -24,7 +24,7 @@ export function Header() {
          <div className="container header__container d-flex">
 
             <div className="flex-fill d-flex justify-content-between">
-               <Link to="/" className=" header__logo">
+               <Link onClick={showMenu ? handleMenu : null} to="/" className=" header__logo">
                   <img className="img-fluid" src={logo} alt="Artista Con" />
                </Link>
 
@@ -36,23 +36,23 @@ export function Header() {
             <div className={`${showMenu ? 'show' : ''} flex-lg-fill collapse navbar-collapse justify-content-between`}>
 
                <ul className="navbar__menu navbar-nav d-flex mb-4 mb-lg-0">
-                  <li className="nav-item"><Link to="/artistas">Artistas</Link></li>
-                  <li className="nav-item"><Link to="/programacao">Programação</Link></li>
-                  <li className="nav-item"><Link to="/sobre">Sobre</Link></li>
+                  <li onClick={handleMenu} className="nav-item"><Link to="/artistas">Artistas</Link></li>
+                  <li onClick={handleMenu} className="nav-item"><Link to="/programacao">Programação</Link></li>
+                  <li onClick={handleMenu} className="nav-item"><Link to="/sobre">Sobre</Link></li>
                </ul>
 
                <ul className="navbar__links navbar-nav d-flex align-items-lg-center">
                   {loggedInUser ?
-                     <li className="nav-item"><Link to="/minha-conta/perfil">Olá {loggedInUser.user.name}</Link></li>
+                     <li onClick={handleMenu} className="nav-item"><Link to="/minha-conta/perfil">Olá {loggedInUser.user.name}</Link></li>
                      : (
                         <>
-                           <li className="nav-item"><Link to="/login">Entre</Link></li>
-                           <li className="nav-item"><Link to="/cadastro">Crie sua conta</Link></li>
+                           <li onClick={handleMenu} className="nav-item"><Link to="/login">Entre</Link></li>
+                           <li onClick={handleMenu} className="nav-item"><Link to="/cadastro">Crie sua conta</Link></li>
                         </>
                      )
                   }
                   <li>
-                     <Link className="navbar__favorites" to="minha-conta/favoritos">
+                     <Link onClick={handleMenu} className="navbar__favorites" to="minha-conta/favoritos">
                         <Heart />
                         <span className="d-lg-none">Meus Favoritos</span>
                      </Link>

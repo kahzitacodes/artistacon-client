@@ -3,12 +3,6 @@ export function Feature(props) {
    const { image, preTitle, title, textPosition, imageAlt } = props;
 
    let isPositionRight = textPosition === 'right';
-   // if (textPosition === "right") {
-   //    position = 'text__right';
-   // }
-   // if (textPosition === "left") {
-   //    position = 'text__left';
-   // }
 
    return (
       <div className="feature">
