@@ -22,7 +22,7 @@
    box-shadow: var(--shadow-XSmall);
 } */
 
-.account__wrap-cards {
+/* .account__wrap-cards {
    display: flex;
    flex-direction: column;
    gap: 20px;
@@ -74,4 +74,4 @@
    display: grid;
    grid-template-columns: repeat(3, 1fr);
    gap: 20px;
-}
+} */

@@ -11,6 +11,7 @@ export function Header() {
 
    const { pathname } = useLocation();
    const { loggedInUser } = useContext(AuthContext);
+
    const [showMenu, setShowMenu] = useState(false);
 
    function handleMenu() {
@@ -43,7 +44,11 @@ export function Header() {
 
                <ul className="navbar__links navbar-nav d-flex align-items-lg-center">
                   {loggedInUser ?
-                     <li onClick={handleMenu} className="nav-item"><Link to="/minha-conta/perfil">Olá {loggedInUser.user.name}</Link></li>
+                     <li onClick={handleMenu} className="nav-item">
+
+                        <Link to="/minha-conta/configuracoes">Olá {loggedInUser.user.name}</Link>
+
+                     </li>
                      : (
                         <>
                            <li onClick={handleMenu} className="nav-item"><Link to="/login">Entre</Link></li>

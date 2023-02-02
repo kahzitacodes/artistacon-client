@@ -5,7 +5,9 @@ import logo from "../assets/images/artistacon-logo-light.svg";
 import { toast } from "react-hot-toast";
 
 export function Signup() {
+
   const navigate = useNavigate();
+
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -13,19 +15,16 @@ export function Signup() {
     confirmPassword: "",
   });
 
-
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-
   async function handleSubmit(e) {
     e.preventDefault();
-
     try {
       await api.post("/user/signup", { ...form });
-
       navigate("/login");
+
     } catch (error) {
       toast.error("Não deu certo");
       console.log(error);
@@ -35,7 +34,8 @@ export function Signup() {
   return (
     <main className="container">
       <div className="row justify-content-center">
-        <div className="col-md-6 col-lg-5 d-flex flex-column gap-4 vh-100 justify-content-center ">
+        <div className="col-md-6 col-lg-5 col-xl-4 d-flex flex-column gap-4 vh-100 justify-content-center">
+
           <Link className="form-signin-logo d-flex justify-content-center" to="/">
             <img className="form-signin-logo" src={logo} alt="Logo Artista Con" />
           </Link>
@@ -79,9 +79,10 @@ export function Signup() {
                 value={form.password}
                 onChange={handleChange}
               />
+              <span className="helper-text text-opacity-50 text-muted">Use pelo menos 6 caracteres</span>
             </div>
             <div className="form-wrap">
-              <label htmlFor="formConfirmPassword">Confirmação de senha</label>
+              <label htmlFor="formConfirmPassword">Confirme a senha</label>
               <input
                 required
                 className="form-control"

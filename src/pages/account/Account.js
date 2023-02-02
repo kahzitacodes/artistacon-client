@@ -1,13 +1,10 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 import { api } from "../../api/api";
-import { AuthContext } from "../../contexts/authContext";
 import { Outlet, useNavigate } from "react-router-dom";
 import { Sidebar } from "../../components/Sidebar";
 
 
 export function Account() {
-
-  const { loggedInUser, setLoggedInUser } = useContext(AuthContext);
 
   const [user, setUser] = useState({});
   const navigate = useNavigate();
@@ -28,18 +25,6 @@ export function Account() {
     fetchUser();
   }, [navigate]);
 
-
-  function handleLogOut() {
-    localStorage.removeItem("loggedInUser");
-    setLoggedInUser(null);
-  }
-
-  useEffect(() => {
-    if (!loggedInUser) {
-      navigate("/login");
-    }
-  }, [loggedInUser, navigate]);
-
   return (
     <main className="main-divider main-account">
       <div className="d-flex align-items-start container">
@@ -50,7 +35,6 @@ export function Account() {
           role={user.role}
           email={user.email}
           id={user._id}
-          logout={() => handleLogOut()}
         />
 
         <div className="main-account__content">

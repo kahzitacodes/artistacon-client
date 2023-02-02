@@ -37,23 +37,26 @@ export function ArtistProducts() {
    useEffect(() => {
       async function fetchFavorites() {
          try {
-
+            if (!loggedInUser) {
+               return;
+            }
             const response = await api.get("/user/account");
             setUserFavorites(response.data.favorites);
 
          } catch (error) {
-            navigate("/login");
             console.log(error);
          }
       }
       fetchFavorites();
-   }, [navigate, updateFavorites]);
+   }, [navigate, updateFavorites, loggedInUser]);
 
    async function handleSave(product) {
 
       try {
+         console.log(loggedInUser);
          if (!loggedInUser) {
             navigate("/login");
+            return;
          }
          await api.post(`/user/favorites/${product}`);
          toast.success("Produto salvo nos seus favoritos");

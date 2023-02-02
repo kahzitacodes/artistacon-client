@@ -11670,6 +11670,10 @@ input[type=file] {
   color: #fff;
 }
 
+.helper-text {
+  font-size: 0.75rem;
+}
+
 .f-modal {
   position: fixed;
   top: 0;

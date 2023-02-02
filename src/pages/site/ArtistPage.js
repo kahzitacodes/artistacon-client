@@ -17,6 +17,7 @@ export function ArtistPage() {
    const artistId = params.artistId;
 
    const url = window.location.href;
+
    const copyToClipboard = () => {
       copy(url);
       toast.success("Endereço copiado pra você compartilhar");

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { api } from "../api/api";
 import { ArtistCard } from "./ArtistCard";
+import BounceLoader from "react-spinners/BounceLoader";
 
 export function ArtistsList() {
 
@@ -33,7 +34,9 @@ export function ArtistsList() {
 
             <div className="grid mb-5">
                {loading ? (
-                  <p className="text-center set__loading">Carregando...</p>
+                  <div className="d-flex justify-content-center">
+                     <BounceLoader loading={loading} color="#887EF9" />
+                  </div>
                ) : (
                   <>
 

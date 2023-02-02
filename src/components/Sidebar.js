@@ -5,11 +5,13 @@ import iPack from "../assets/images/i-package300.svg";
 import iTool from "../assets/images/i-tool300.svg";
 import iHeart from "../assets/images/i-heart300.svg";
 import iCalendar from "../assets/images/i-calendar300.svg";
-
+import { AuthContext } from "../contexts/authContext";
+import { useContext } from "react";
 
 export function Sidebar(props) {
 
-   const { logout, name, email, role, id } = props;
+   const { handleLogOut } = useContext(AuthContext);
+   const { name, email, role, id } = props;
 
    const isArtist = role === "ARTIST";
    const isAdmin = role === "ADMIN";
@@ -35,6 +37,15 @@ export function Sidebar(props) {
          <hr />
          <nav className="sidebar__nav">
             <ul>
+               <li>
+                  <NavLink
+                     className={`sidebar__link ${({ isActive }) => (isActive ? "active" : "")}`}
+                     to="/minha-conta/configuracoes"
+                  >
+                     <img src={iTool} alt="Minha conta" />
+                     Minha conta
+                  </NavLink>
+               </li>
                {isArtist ?
                   <>
                      <li>
@@ -71,26 +82,15 @@ export function Sidebar(props) {
                      </li>
                   </>
                   : null}
-               <>
-                  <li>
-                     <NavLink
-                        className={`sidebar__link ${({ isActive }) => (isActive ? "active" : "")}`}
-                        to="/minha-conta/favoritos"
-                     >
-                        <img src={iHeart} alt="Favoritos" />
-                        Favoritos
-                     </NavLink>
-                  </li>
-                  <li>
-                     <NavLink
-                        className={`sidebar__link ${({ isActive }) => (isActive ? "active" : "")}`}
-                        to="/minha-conta/configuracoes"
-                     >
-                        <img src={iTool} alt="Minha conta" />
-                        Minha conta
-                     </NavLink>
-                  </li>
-               </>
+               <li>
+                  <NavLink
+                     className={`sidebar__link ${({ isActive }) => (isActive ? "active" : "")}`}
+                     to="/minha-conta/favoritos"
+                  >
+                     <img src={iHeart} alt="Favoritos" />
+                     Favoritos
+                  </NavLink>
+               </li>
             </ul>
 
          </nav>
@@ -98,7 +98,7 @@ export function Sidebar(props) {
          <nav className="sidebar__nav">
             <ul>
                <li>
-                  <button className="sidebar__link w-100" onClick={logout}>
+                  <button className="sidebar__link w-100" onClick={handleLogOut}>
                      <img src={iLogout} alt="Sair" />
                      Sair
                   </button>
