@@ -23,6 +23,7 @@ export function Signup() {
     e.preventDefault();
     try {
       await api.post("/user/signup", { ...form });
+      toast.success("Sua conta foi criada!");
       navigate("/login");
 
     } catch (error) {

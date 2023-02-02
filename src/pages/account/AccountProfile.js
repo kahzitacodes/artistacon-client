@@ -124,8 +124,9 @@ export function AccountProfile() {
 
                </div>
                <div className="form-wrap">
-                  <label className="form__label">Nome artístico</label>
+                  <label htmlFor="artistic_name" className="form__label">Nome artístico</label>
                   <input
+                     id="artistic_name"
                      className="form-control"
                      type="text"
                      name="artistic_name"
@@ -138,12 +139,12 @@ export function AccountProfile() {
                   <label className="form__label" htmlFor="input-bio">Biografia</label>
                   <textarea
                      id="input-bio"
-                     rows="6"
                      className="form-control"
                      type="text"
                      name="bio"
                      value={form.bio}
                      onChange={handleChange}
+                     rows="6"
                   />
 
                </div>
@@ -154,8 +155,8 @@ export function AccountProfile() {
                      id="input-key-words"
                      className="form-control"
                      type="text"
-                     value={form.key_words}
                      name="key_words"
+                     value={form.key_words}
                      onChange={handleChange}
                   />
                   <span className="form__helper">
@@ -172,8 +173,8 @@ export function AccountProfile() {
                      id="input-store"
                      className="form-control"
                      type="text"
-                     value={form.store_URL}
                      name="store_URL"
+                     value={form.store_URL}
                      onChange={handleChange}
                   />
                </div>
