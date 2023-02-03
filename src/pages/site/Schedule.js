@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { api } from "../../api/api";
 import { FeatureDiscord } from "../../components/FeatureDiscord";
 import { ScheduleCard } from "../../components/ScheduleCard";
+import { BounceLoader } from "react-spinners";
 
 export function Schedule() {
 
@@ -32,8 +33,6 @@ export function Schedule() {
       };
    }).sort((date1, date2) => date1.dateComplete - date2.dateComplete);
 
-
-
    return (
       <main className="main-divider-top">
          <div className="container">
@@ -48,7 +47,10 @@ export function Schedule() {
             <div className="schedule">
 
                {loading ? (
-                  <p className="text-center set__loading">Loading...</p>
+                  <div className="d-flex gap-3 py-5 flex-column align-items-center">
+                     <BounceLoader color="#887EF9" />
+                     <p>Carregando programação...</p>
+                  </div>
                ) : (
                   <>
 

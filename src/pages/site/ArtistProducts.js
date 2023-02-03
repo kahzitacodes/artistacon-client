@@ -5,6 +5,7 @@ import { ProductCard } from "../../components/ProductCard";
 import { AuthContext } from "../../contexts/authContext";
 import { Modal } from "../../components/Modal";
 import { toast } from "react-hot-toast";
+import { BounceLoader } from "react-spinners";
 
 export function ArtistProducts() {
 
@@ -110,7 +111,14 @@ export function ArtistProducts() {
             productShow={productShow}
          />
 
-         {loading ? (<p className="text-center set__loading">Loading...</p>) :
+         {loading ? (
+
+            <div className="d-flex gap-3 py-5 flex-column align-items-center">
+               <BounceLoader color="#887EF9" />
+               <p>Carregando produtos...</p>
+            </div>
+
+         ) :
 
             products.length === 0 ? "Este artista ainda não postou produtos." :
                (

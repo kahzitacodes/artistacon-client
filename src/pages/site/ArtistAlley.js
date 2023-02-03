@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { api } from "../../api/api";
 import { ArtistCard } from "../../components/ArtistCard";
+import { BounceLoader } from "react-spinners";
 
 export function ArtistAlley() {
 
@@ -32,10 +33,14 @@ export function ArtistAlley() {
                </h2>
             </div>
 
+            {featching && (
+               <div className="d-flex gap-3 py-5 flex-column align-items-center">
+                  <BounceLoader color="#887EF9" />
+                  <p>Carregando programação...</p>
+               </div>
+            )}
+
             <div className="grid ">
-
-               {featching && <p>carregando...</p>}
-
                {artists && artists.map((currentArtist) => {
                   return (
                      <div

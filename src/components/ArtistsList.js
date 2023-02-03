@@ -7,7 +7,7 @@ import BounceLoader from "react-spinners/BounceLoader";
 export function ArtistsList() {
 
    const [artists, setArtists] = useState([]);
-   const [loading, setLoading] = useState(false);
+   const [loading, setLoading] = useState(true);
 
    useEffect(() => {
       async function fetchArtists() {
@@ -32,13 +32,14 @@ export function ArtistsList() {
                <h2 className="mb-5">Conheça artistas incríveis</h2>
             </div>
 
-            <div className="grid mb-5">
-               {loading ? (
-                  <div className="d-flex justify-content-center">
-                     <BounceLoader loading={loading} color="#887EF9" />
-                  </div>
-               ) : (
-                  <>
+            {loading ? (
+               <div className="d-flex gap-3 py-5 flex-column align-items-center">
+                  <BounceLoader color="#887EF9" />
+                  <p>Carregando artistas...</p>
+               </div>
+            ) : (
+               <>
+                  <div className="grid mb-5">
 
                      {artists && artists.map((currentArtist) => {
                         return (
@@ -57,14 +58,14 @@ export function ArtistsList() {
                         );
                      })}
 
-                  </>
-               )}
+                  </div>
 
-            </div>
+                  <div className="d-flex justify-content-center">
+                     <Link className="btn btn-lg btn-outline-secondary" to="/programacao">Veja a lista completa</Link>
+                  </div>
 
-            <div className="d-flex justify-content-center">
-               <Link className="btn btn-lg btn-primary" to="/programacao">Veja a lista completa</Link>
-            </div>
+               </>
+            )}
          </div>
       </div>
    );

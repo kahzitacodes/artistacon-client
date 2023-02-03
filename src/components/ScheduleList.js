@@ -7,7 +7,7 @@ import BounceLoader from "react-spinners/BounceLoader";
 export function ScheduleList() {
 
    const [schedule, setSchedule] = useState([]);
-   const [loading, setLoading] = useState(false);
+   const [loading, setLoading] = useState(true);
 
    useEffect(() => {
       async function fetchSchedule() {
@@ -40,14 +40,14 @@ export function ScheduleList() {
                <p className="pre-title fw-bold mb-3">Lives</p>
                <h2 className="mb-5">Fique por dentro das próximas atividades</h2>
             </div>
-
-            <div className="grid mb-5">
-               {loading ? (
-                  <div className="d-flex justify-content-center">
-                     <BounceLoader loading={loading} color="#887EF9" />
-                  </div>
-               ) : (
-                  <>
+            {loading ? (
+               <div className="d-flex gap-3 py-5 flex-column align-items-center">
+                  <BounceLoader color="#887EF9" />
+                  <p>Carregando programação...</p>
+               </div>
+            ) : (
+               <>
+                  <div className="grid mb-5">
 
                      {scheduleRightTime.map(currentElement => {
 
@@ -67,14 +67,14 @@ export function ScheduleList() {
 
                      })}
 
-                  </>
-               )}
 
-            </div>
+                  </div>
 
-            <div className="d-flex justify-content-center">
-               <Link className="btn btn-lg btn-outline-secondary" to="/programacao">Explore mais</Link>
-            </div>
+                  <div className="d-flex justify-content-center">
+                     <Link className="btn btn-lg btn-outline-secondary" to="/programacao">Explore mais</Link>
+                  </div>
+               </>
+            )}
          </div>
       </div>
    );
